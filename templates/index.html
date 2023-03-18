@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+<!-- <button type="button">Click Me!</button> -->
+
+ <button type="submit" onClick="">Add Pokemon</button> 
+
+
+</head>
+<body>
+    <h1>Pokemon</h1>
+
+    {% for pokemon in ['pokemons']%} 
+    
+    <h2>{{pokemon['name']}}</h2>
+    <img class="pkm-img" src="{{pokemon['sprites']['front_default']}}">
+    <h3>Types</h3>
+    <ul>
+        {% for poke in pokemon['types'] %}
+            <li> {{ poke["type"]['name']}}</li>
+        {% endfor %}
+    </ul>
+    {%endfor%}
+</body>
+</html>
